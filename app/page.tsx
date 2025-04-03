@@ -1,9 +1,9 @@
 "use client"
 
-import Navbar from "./pages/header/page";
-import Footer from "./pages/footer/page";
-import { HeroSection } from "./pages/herosection/page";
-import { FeaturesSection } from "./pages/featuresection/page";
+import Navbar from "@/components/header/page";
+import Footer from "@/components/footer/page";
+import { HeroSection } from "@/components/herosection/page";
+import { FeaturesSection } from "@/components/featuresection/page";
 
 export default function Home() {
   return (
