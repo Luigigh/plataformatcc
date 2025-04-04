@@ -1,12 +1,17 @@
 "use client"
 
+import { useTheme } from "next-themes"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
+import ThemeToggle from "../ui/ThemeToggle"
+
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {theme, setTheme} = useTheme();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -35,6 +40,9 @@ export default function Navbar() {
           <Link href="#features" className="text-sm font-medium hover:underline">
             Recursos
           </Link>
+
+          <ThemeToggle />
+
           <div className="flex items-center space-x-2">
             
             <Link href="/">
@@ -52,6 +60,7 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="absolute top-16 left-0 right-0 bg-background border-b md:hidden">
             <div className="container p-4 space-y-4">
+              <ThemeToggle />
               <Link href="/" className="block text-sm font-medium hover:underline" onClick={() => setIsMenuOpen(false)}>
                 Home
               </Link>
